@@ -1,6 +1,4 @@
-# devops-homework-wiredcraft
-
-
+# devops-test
 
 ## References
 - https://github.com/Wiredcraft/test-devops
