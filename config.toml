@@ -1,0 +1,9 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+# theme = "bento"
+theme = "ananke"
+
+
+[params]
+    version = "0.0.1"
