@@ -2,8 +2,11 @@
 
 
 ## Getting Started 
-```
+```sh
 git clone --recurse-submodules git@github.com:jizusun/devops-homework-wiredcraft.git
+# checkout other branches into subfolders
+git worktree add -B gh-pages public origin/gh-pages
+git worktree add -B src src origin/src
 ```
 
 
