@@ -6,15 +6,16 @@ import (
 	"github.com/jizusun/wiredcraft-hugo/externals"
 )
 
-var ArgError = errors.New("Only accept one argument: dev or staging")
+// ErrArguments the error when the argument is incorrect
+var ErrArguments = errors.New("Only accept one argument: dev or staging")
 
 func checkArgs(args []string) (string, error) {
 	if len(args) != 1 {
-		return "", ArgError
+		return "", ErrArguments
 	}
 	envName := args[0]
 	if envName != "dev" && envName != "staging" {
-		return "", ArgError
+		return "", ErrArguments
 	}
 	return envName, nil
 }

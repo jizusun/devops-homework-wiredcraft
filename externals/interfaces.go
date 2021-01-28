@@ -1,5 +1,6 @@
 package externals
 
+// DependenciesInterface just for mocking
 type DependenciesInterface interface {
 	AppendToFile(filePath string, content string) error
 	GetFortune() (string, error)
