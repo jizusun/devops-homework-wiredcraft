@@ -5,12 +5,10 @@ on:
   push:
     branches:
       - src
-      - the-script
     # tags: []
   pull_request:
     branches:
       - src
-      - the-script
 
 jobs:
   lint:
