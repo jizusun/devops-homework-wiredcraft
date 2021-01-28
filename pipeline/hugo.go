@@ -5,16 +5,25 @@ import (
 	"wiredcraft-hugo/externals"
 )
 
-// Execute accepts only one parameter and executes depends on if it is `dev` or `staging`
-func Execute(args []string) error {
-	dep := &externals.Dependencies{}
-	argErr := errors.New("Only accept one argument: dev or staging")
+var ArgError = errors.New("Only accept one argument: dev or staging")
+
+func checkArgs(args []string) (string, error) {
 	if len(args) != 1 {
-		return argErr
+		return "", ArgError
 	}
 	envName := args[0]
 	if envName != "dev" && envName != "staging" {
-		return argErr
+		return "", ArgError
+	}
+	return envName, nil
+}
+
+// Execute accepts only one parameter and executes depends on if it is `dev` or `staging`
+func Execute(args []string) error {
+	dep := &externals.Dependencies{}
+	envName, err := checkArgs(args)
+	if err != nil {
+		return err
 	}
 	if envName == "dev" {
 		post := newPost(dep)
