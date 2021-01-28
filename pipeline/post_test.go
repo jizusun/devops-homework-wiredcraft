@@ -2,6 +2,7 @@ package pipeline
 
 import (
 	"testing"
+
 	"github.com/jizusun/wiredcraft-hugo/mocks"
 
 	"github.com/stretchr/testify/assert"
@@ -59,12 +60,21 @@ func (suite *PostTestSuite) SetupTest() {
 func (suite *PostTestSuite) Test_save_success() {
 	dir := "/home/jizu/hugo-website/content/posts"
 	workdir := "/home/jizu/hugo-website"
-	suite.dep.On("JoinPath", workdir, "content/posts").Return(dir)
+	suite.dep.On("JoinPath", workdir, "content").Return(dir)
 	suite.dep.On("DirExists", dir).Return(true, nil)
 	suite.dep.On("ExecHugo", "new posts/2021-01-27T22:58:52+08:00.md", workdir).Return("", nil)
 	suite.dep.On("Println", mock.Anything)
 	actual := suite.post.save(suite.dep)
 	suite.Nil(actual)
+}
+
+func (suite *PostTestSuite) Test_save_unsuccess() {
+	dir := "/home/jizu/hugo-website/content/posts"
+	workdir := "/home/jizu/hugo-website"
+	suite.dep.On("JoinPath", workdir, "content").Return(dir)
+	suite.dep.On("DirExists", dir).Return(false, nil)
+	actual := suite.post.save(suite.dep)
+	suite.NotNil(actual)
 }
 
 func (suite *PostTestSuite) Test_appendFortune_success() {

@@ -1,6 +1,10 @@
 package pipeline
 
-import "github.com/jizusun/wiredcraft-hugo/externals"
+import (
+	"errors"
+
+	"github.com/jizusun/wiredcraft-hugo/externals"
+)
 
 // Post the hugo post
 type Post struct {
@@ -22,15 +26,18 @@ func newPost(dep externals.DependenciesInterface) *Post {
 	}
 }
 
+func (p *Post) contentFolderExist(dep externals.DependenciesInterface) bool {
+	postPath := dep.JoinPath(p.workingDir, "content")
+	exist, _ := dep.DirExists(postPath)
+	return exist
+}
+
 func (p *Post) save(dep externals.DependenciesInterface) error {
-	postPath := dep.JoinPath(p.workingDir, "content/"+p.kind)
-	exist, err := dep.DirExists(postPath)
-	if !exist {
-		dep.Println("New post cannot be created.")
-		return err
+	isCorrectWorkingDir := p.contentFolderExist(dep)
+	if !isCorrectWorkingDir {
+		return errors.New("Make the folder exists: content")
 	}
-	var output string
-	output, err = dep.ExecHugo("new "+p.kind+"/"+p.fileName, p.workingDir)
+	output, err := dep.ExecHugo("new "+p.kind+"/"+p.fileName, p.workingDir)
 	dep.Println(output)
 	return err
 }
