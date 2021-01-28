@@ -1,20 +1,28 @@
 package pipeline
 
-// Execute accepts only one parameter and executes depends on if it is `dev` or `staging`
-func Execute(envName string) error {
-	// TODO: return error if no such an argument was provided
-	// TODO: return error if `envName` is unknown: `dev`, `staging`
+import "errors"
 
+// Execute accepts only one parameter and executes depends on if it is `dev` or `staging`
+func Execute(args []string) error {
+	argErr := errors.New("Only accept one argument: dev or staging")
+	if len(args) != 1 {
+		return argErr
+	}
+	envName := args[0]
+	if envName != "dev" && envName != "staging" {
+		return argErr
+	}
 	if envName == "dev" {
 		post := newPost()
-		var err error
-		err = post.save()
+		err := post.save()
 		if err != nil {
 			return err
 		}
-		post.updateContent()
+		err = post.updateContent()
+		if err != nil {
+			return err
+		}
 	}
-
 	site := newSite(envName)
 	site.incrementVersion()
 	site.compile()
