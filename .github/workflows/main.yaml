@@ -4,10 +4,11 @@ name: Build and Test
 on:
   push:
     branches:
-      - master
+      - src
+      - the-script
     # tags: []
   pull_request:
-      types: [assigned, opened, synchronize, reopened]
+    types: [assigned, opened, synchronize, reopened]
 
 jobs:
   lint:
