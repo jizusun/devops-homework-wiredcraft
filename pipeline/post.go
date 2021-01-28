@@ -1,6 +1,6 @@
 package pipeline
 
-import "wiredcraft-hugo/externals"
+import "github.com/jizusun/wiredcraft-hugo/externals"
 
 // Post the hugo post
 type Post struct {

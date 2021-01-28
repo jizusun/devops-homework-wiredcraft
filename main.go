@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
-	"wiredcraft-hugo/pipeline"
+
+	"github.com/jizusun/wiredcraft-hugo/pipeline"
 )
 
 func main() {

@@ -2,7 +2,8 @@ package pipeline
 
 import (
 	"errors"
-	"wiredcraft-hugo/externals"
+
+	"github.com/jizusun/wiredcraft-hugo/externals"
 )
 
 var ArgError = errors.New("Only accept one argument: dev or staging")

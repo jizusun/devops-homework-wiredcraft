@@ -2,7 +2,7 @@ package pipeline
 
 import (
 	"testing"
-	"wiredcraft-hugo/mocks"
+	"github.com/jizusun/wiredcraft-hugo/mocks"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"

@@ -1,4 +1,4 @@
-module wiredcraft-hugo
+module github.com/jizusun/wiredcraft-hugo
 
 go 1.15
 
