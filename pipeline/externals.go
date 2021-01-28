@@ -14,7 +14,7 @@ import (
 var fs = afero.NewOsFs()
 var afs = &afero.Afero{Fs: fs}
 
-func appendToFile(filePath string, content string) error {
+func AppendToFile(filePath string, content string) error {
 	f, err := os.OpenFile(filePath, os.O_APPEND|os.O_WRONLY, 0600)
 	if err != nil {
 		return err
@@ -26,7 +26,7 @@ func appendToFile(filePath string, content string) error {
 	return nil
 }
 
-func getFortune() (string, error) {
+func GetFortune() (string, error) {
 	out, err := exec.Command("fortune").Output()
 	if err != nil {
 		return "", err
@@ -36,13 +36,13 @@ func getFortune() (string, error) {
 	return outputStr, nil
 }
 
-func joinPath(elem ...string) string {
+func JoinPath(elem ...string) string {
 	return path.Join(elem...)
 }
 
 // https://stackoverflow.com/questions/18970265/is-there-an-easy-way-to-stub-out-time-now-globally-during-test
 // https://talks.golang.org/2012/10things.slide#8
-func execHugo(argString string, workingDir string) (string, error) {
+func ExecHugo(argString string, workingDir string) (string, error) {
 	args := strings.Split(argString, " ")
 	cmd := exec.Command("hugo", args...)
 	cmd.Dir = workingDir
@@ -54,23 +54,23 @@ func execHugo(argString string, workingDir string) (string, error) {
 	return output, nil
 }
 
-func getNow() string {
+func GetNow() string {
 	return time.Now().Format(time.RFC3339)
 }
 
-func getHugoWorkingDir() string {
+func GetHugoWorkingDir() string {
 	return os.Getenv("HUGO_WORK_DIR")
 }
 
-func getWorkingDir() string {
+func GetWorkingDir() string {
 	dir, _ := os.Getwd()
 	return dir
 }
 
-func dirExists(path string) (bool, error) {
+func DirExists(path string) (bool, error) {
 	return afs.DirExists(path)
 }
 
-func println(a ...interface{}) (int, error) {
+func Println(a ...interface{}) (int, error) {
 	return fmt.Println(a...)
 }

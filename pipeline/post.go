@@ -8,10 +8,10 @@ type Post struct {
 }
 
 func newPost() *Post {
-	fileName := getNow() + ".md"
-	targetPath := getHugoWorkingDir()
+	fileName := GetNow() + ".md"
+	targetPath := GetHugoWorkingDir()
 	if len(targetPath) == 0 {
-		targetPath = getWorkingDir()
+		targetPath = GetWorkingDir()
 	}
 	return &Post{
 		fileName:   fileName,
@@ -21,29 +21,29 @@ func newPost() *Post {
 }
 
 func (p *Post) save() error {
-	postPath := joinPath(p.workingDir, "content/"+p.kind)
-	exist, err := dirExists(postPath)
+	postPath := JoinPath(p.workingDir, "content/"+p.kind)
+	exist, err := DirExists(postPath)
 	if !exist {
-		println("New post cannot be created.")
+		Println("New post cannot be created.")
 		return err
 	}
 	var output string
-	output, err = execHugo("new "+p.kind+"/"+p.fileName, p.workingDir)
-	println(output)
+	output, err = ExecHugo("new "+p.kind+"/"+p.fileName, p.workingDir)
+	Println(output)
 	return err
 }
 
 func (p *Post) getFilePath() string {
-	filePath := joinPath(p.workingDir, "/content/", p.kind, p.fileName)
-	println(filePath)
+	filePath := JoinPath(p.workingDir, "/content/", p.kind, p.fileName)
+	Println(filePath)
 	return filePath
 }
 
 func (p *Post) appendFortune() error {
-	str, err := getFortune()
+	str, err := GetFortune()
 	if err != nil {
 		return err
 	}
-	appendToFile(p.getFilePath(), str)
+	AppendToFile(p.getFilePath(), str)
 	return nil
 }
