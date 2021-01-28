@@ -18,7 +18,7 @@ func Execute(args []string) error {
 		if err != nil {
 			return err
 		}
-		err = post.updateContent()
+		err = post.appendFortune()
 		if err != nil {
 			return err
 		}

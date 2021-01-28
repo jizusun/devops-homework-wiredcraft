@@ -84,14 +84,24 @@ func (p *Post) execHugo(argString string, exec realExec) (string, error) {
 	return output, nil
 }
 
-func (p *Post) updateContent() error {
-	filePath := path.Join(p.workingDir, "/content/", p.kind, p.fileName)
-	fmt.Println(filePath)
-	out, err := exec.Command("bash", "-c", "fortune >> "+filePath).Output()
+func (p *Post) appendFortune() error {
+	out, err := exec.Command("fortune").Output()
 	if err != nil {
 		return err
 	}
-	output := string(out[:])
-	fmt.Println(output)
+	outputStr := string(out[:])
+	fmt.Println(outputStr)
+
+	filePath := path.Join(p.workingDir, "/content/", p.kind, p.fileName)
+	fmt.Println(filePath)
+	var f *os.File
+	f, err = os.OpenFile(filePath, os.O_APPEND|os.O_WRONLY, 0600)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	if _, err := f.Write(out); err != nil {
+		return err
+	}
 	return nil
 }
