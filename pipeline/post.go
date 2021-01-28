@@ -1,5 +1,7 @@
 package pipeline
 
+import "wiredcraft-hugo/externals"
+
 // Post the hugo post
 type Post struct {
 	fileName   string
@@ -7,11 +9,11 @@ type Post struct {
 	kind       string
 }
 
-func newPost() *Post {
-	fileName := GetNow() + ".md"
-	targetPath := GetHugoWorkingDir()
+func newPost(dep externals.DependenciesInterface) *Post {
+	fileName := dep.GetNow() + ".md"
+	targetPath := dep.GetHugoWorkingDir()
 	if len(targetPath) == 0 {
-		targetPath = GetWorkingDir()
+		targetPath = dep.GetWorkingDir()
 	}
 	return &Post{
 		fileName:   fileName,
@@ -20,30 +22,32 @@ func newPost() *Post {
 	}
 }
 
-func (p *Post) save() error {
-	postPath := JoinPath(p.workingDir, "content/"+p.kind)
-	exist, err := DirExists(postPath)
+func (p *Post) save(dep externals.DependenciesInterface) error {
+	postPath := dep.JoinPath(p.workingDir, "content/"+p.kind)
+	exist, err := dep.DirExists(postPath)
 	if !exist {
-		Println("New post cannot be created.")
+		dep.Println("New post cannot be created.")
 		return err
 	}
 	var output string
-	output, err = ExecHugo("new "+p.kind+"/"+p.fileName, p.workingDir)
-	Println(output)
+	output, err = dep.ExecHugo("new "+p.kind+"/"+p.fileName, p.workingDir)
+	dep.Println(output)
 	return err
 }
 
-func (p *Post) getFilePath() string {
-	filePath := JoinPath(p.workingDir, "/content/", p.kind, p.fileName)
-	Println(filePath)
-	return filePath
+func (p *Post) getFilePath(dep externals.DependenciesInterface) string {
+	return dep.JoinPath(p.workingDir, "/content/", p.kind, p.fileName)
 }
 
-func (p *Post) appendFortune() error {
-	str, err := GetFortune()
+func (p *Post) appendFortune(dep externals.DependenciesInterface) error {
+	str, err := dep.GetFortune()
 	if err != nil {
 		return err
 	}
-	AppendToFile(p.getFilePath(), str)
+	filePath := p.getFilePath(dep)
+	err = dep.AppendToFile(filePath, str)
+	if err != nil {
+		return err
+	}
 	return nil
 }

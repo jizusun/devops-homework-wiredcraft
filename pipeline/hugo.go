@@ -1,9 +1,13 @@
 package pipeline
 
-import "errors"
+import (
+	"errors"
+	"wiredcraft-hugo/externals"
+)
 
 // Execute accepts only one parameter and executes depends on if it is `dev` or `staging`
 func Execute(args []string) error {
+	dep := &externals.Dependencies{}
 	argErr := errors.New("Only accept one argument: dev or staging")
 	if len(args) != 1 {
 		return argErr
@@ -13,12 +17,12 @@ func Execute(args []string) error {
 		return argErr
 	}
 	if envName == "dev" {
-		post := newPost()
-		err := post.save()
+		post := newPost(dep)
+		err := post.save(dep)
 		if err != nil {
 			return err
 		}
-		err = post.appendFortune()
+		err = post.appendFortune(dep)
 		if err != nil {
 			return err
 		}
