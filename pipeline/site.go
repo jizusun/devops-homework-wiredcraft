@@ -25,12 +25,12 @@ func (s *Site) getCurrentVersion(dep externals.DependenciesInterface) (string, e
 	if err != nil {
 		return "", err
 	}
-	var conf HugoTomlConfig
+	var conf hugoTomlConfig
 	toml.Decode(str, &conf)
 	return conf.Params.Version, nil
 }
 
-type HugoTomlConfig struct {
+type hugoTomlConfig struct {
 	Params struct {
 		Version string `toml:"version"`
 	} `toml:"params"`

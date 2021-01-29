@@ -88,6 +88,7 @@ func (dep Dependencies) Println(a ...interface{}) {
 	fmt.Println(a...)
 }
 
+// GetHugoConfigToml get the content of `config.toml`
 func (dep Dependencies) GetHugoConfigToml(workingDir string) (string, error) {
 	tomlFile, err := ioutil.ReadFile(path.Join(workingDir, "config.toml"))
 	return string(tomlFile[:]), err
