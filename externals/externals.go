@@ -2,6 +2,7 @@ package externals
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
 	"os/exec"
 	"path"
@@ -85,4 +86,9 @@ func (dep Dependencies) DirExists(path string) (bool, error) {
 // Println wrapper for fmt.Println
 func (dep Dependencies) Println(a ...interface{}) {
 	fmt.Println(a...)
+}
+
+func (dep Dependencies) GetHugoConfigToml(workingDir string) (string, error) {
+	tomlFile, err := ioutil.ReadFile(path.Join(workingDir, "config.toml"))
+	return string(tomlFile[:]), err
 }
