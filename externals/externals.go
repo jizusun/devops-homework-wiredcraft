@@ -88,7 +88,7 @@ func (dep Dependencies) Println(a ...interface{}) {
 	fmt.Println(a...)
 }
 
-// GetHugoConfigToml get the content of `config.toml`
+// ReadFileContent wrapper for ioutil.Readfile, but returns string
 func (dep Dependencies) ReadFileContent(filename string) (string, error) {
 	filecontent, err := ioutil.ReadFile(filename)
 	return string(filecontent[:]), err
