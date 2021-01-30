@@ -4,9 +4,9 @@ import (
 	"errors"
 	"path"
 
-	"github.com/BurntSushi/toml"
 	"github.com/blang/semver/v4"
 	"github.com/jizusun/wiredcraft-hugo/externals"
+	"github.com/pelletier/go-toml"
 )
 
 // Site the hugo site
@@ -30,12 +30,12 @@ func loadSite(envName string, dep externals.DependenciesInterface) (*Site, error
 }
 
 func getCurrentVersion(dep externals.DependenciesInterface, workingDir string) (string, error) {
-	str, err := dep.ReadFileContent(path.Join(workingDir, "config/_default/params.toml"))
+	bytes, err := dep.ReadFileContent(path.Join(workingDir, "config/_default/params.toml"))
 	if err != nil {
 		return "", err
 	}
 	var params hugoConfigParamsToml
-	toml.Decode(str, &params)
+	toml.Unmarshal(bytes, &params)
 	version := params.Version
 	if len(version) == 0 {
 		return "", errors.New("No version found")
@@ -60,6 +60,7 @@ func (s *Site) getIncrementedVersion(currentVersion string) string {
 
 func (s *Site) incrementVersion(dep externals.DependenciesInterface) {
 	newVersion := s.getIncrementedVersion(s.version)
+
 	s.version = newVersion
 }
 

@@ -156,14 +156,16 @@ func (_m *DependenciesInterface) Println(a ...interface{}) {
 }
 
 // ReadFileContent provides a mock function with given fields: filename
-func (_m *DependenciesInterface) ReadFileContent(filename string) (string, error) {
+func (_m *DependenciesInterface) ReadFileContent(filename string) ([]byte, error) {
 	ret := _m.Called(filename)
 
-	var r0 string
-	if rf, ok := ret.Get(0).(func(string) string); ok {
+	var r0 []byte
+	if rf, ok := ret.Get(0).(func(string) []byte); ok {
 		r0 = rf(filename)
 	} else {
-		r0 = ret.Get(0).(string)
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]byte)
+		}
 	}
 
 	var r1 error

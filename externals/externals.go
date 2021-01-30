@@ -89,7 +89,6 @@ func (dep Dependencies) Println(a ...interface{}) {
 }
 
 // ReadFileContent wrapper for ioutil.Readfile, but returns string
-func (dep Dependencies) ReadFileContent(filename string) (string, error) {
-	filecontent, err := ioutil.ReadFile(filename)
-	return string(filecontent[:]), err
+func (dep Dependencies) ReadFileContent(filename string) ([]byte, error) {
+	return ioutil.ReadFile(filename)
 }

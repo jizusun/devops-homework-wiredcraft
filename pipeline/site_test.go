@@ -23,7 +23,7 @@ func (suite *SiteTestSuite) SetupTest() {
 }
 
 func (suite *SiteTestSuite) Test_newSite() {
-	tomlData := `version = "0.0.2"`
+	tomlData := []byte(`version = "0.0.2"`)
 	suite.dep = new(mocks.DependenciesInterface)
 	suite.dep.On("GetHugoWorkingDir").Return("")
 	suite.dep.On("GetWorkingDir").Return("/home/jizu/hugo-website")
@@ -42,13 +42,13 @@ func (suite *SiteTestSuite) Test_newSite_failedToReadFile() {
 	suite.dep = new(mocks.DependenciesInterface)
 	suite.dep.On("GetHugoWorkingDir").Return("")
 	suite.dep.On("GetWorkingDir").Return("/home/jizu/hugo-website")
-	suite.dep.On("ReadFileContent", "/home/jizu/hugo-website/config/_default/params.toml").Return("", errFailedToOpen)
+	suite.dep.On("ReadFileContent", "/home/jizu/hugo-website/config/_default/params.toml").Return(nil, errFailedToOpen)
 	site, err := loadSite("dev", suite.dep)
 	suite.Equal(err, errFailedToOpen)
 	suite.Nil(site)
 }
 func (suite *SiteTestSuite) Test_newSite_EmptyVersion() {
-	tomlData := ``
+	tomlData := []byte(``)
 	suite.dep = new(mocks.DependenciesInterface)
 	suite.dep.On("GetHugoWorkingDir").Return("")
 	suite.dep.On("GetWorkingDir").Return("/home/jizu/hugo-website")

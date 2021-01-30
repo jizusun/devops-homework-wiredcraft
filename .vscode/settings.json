@@ -1,5 +1,8 @@
 {
     "editor.formatOnSave": true,
+    // Specifies Lint tool name.
+    "go.lintTool": "golint",
+    "go.lintOnSave": "file",
     "go.testOnSave": true,
     "go.coverOnSave": true,
     "go.coverageDecorator": {
