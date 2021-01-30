@@ -1,7 +1,11 @@
 package pipeline
 
 import (
+	"errors"
+	"path"
+
 	"github.com/BurntSushi/toml"
+	"github.com/blang/semver/v4"
 	"github.com/jizusun/wiredcraft-hugo/externals"
 )
 
@@ -12,32 +16,51 @@ type Site struct {
 	workingDir string
 }
 
-func newSite(envName string, dep externals.DependenciesInterface) *Site {
-	targetPath := dep.GetHugoWorkingDir()
-	if len(targetPath) == 0 {
-		targetPath = dep.GetWorkingDir()
+func loadSite(envName string, dep externals.DependenciesInterface) (*Site, error) {
+	workingDir := dep.GetHugoWorkingDir()
+	if len(workingDir) == 0 {
+		workingDir = dep.GetWorkingDir()
 	}
-	return &Site{envName: envName, workingDir: targetPath}
+	version, err := getCurrentVersion(dep, workingDir)
+	if err != nil {
+		return nil, err
+	}
+
+	return &Site{version: version, envName: envName, workingDir: workingDir}, nil
 }
 
-func (s *Site) getCurrentVersion(dep externals.DependenciesInterface) (string, error) {
-	str, err := dep.GetHugoConfigToml(s.workingDir)
+func getCurrentVersion(dep externals.DependenciesInterface, workingDir string) (string, error) {
+	str, err := dep.ReadFileContent(path.Join(workingDir, "config/_default/params.toml"))
 	if err != nil {
 		return "", err
 	}
-	var conf hugoTomlConfig
-	toml.Decode(str, &conf)
-	return conf.Params.Version, nil
+	var params hugoConfigParamsToml
+	toml.Decode(str, &params)
+	version := params.Version
+	if len(version) == 0 {
+		return "", errors.New("No version found")
+	}
+	return params.Version, nil
 }
 
-type hugoTomlConfig struct {
-	Params struct {
-		Version string `toml:"version"`
-	} `toml:"params"`
+type hugoConfigParamsToml struct {
+	Version string `toml:"version"`
 }
 
-func (s *Site) incrementVersion(dep externals.DependenciesInterface) string {
-	return "0.0.1"
+func (s *Site) getIncrementedVersion(currentVersion string) string {
+	currentSemVer, _ := semver.Make(currentVersion)
+	if s.envName == "dev" {
+		currentSemVer.IncrementPatch()
+	} else {
+		currentSemVer.IncrementMinor()
+	}
+	return currentSemVer.String()
+
+}
+
+func (s *Site) incrementVersion(dep externals.DependenciesInterface) {
+	newVersion := s.getIncrementedVersion(s.version)
+	s.version = newVersion
 }
 
 func (s *Site) compile() {

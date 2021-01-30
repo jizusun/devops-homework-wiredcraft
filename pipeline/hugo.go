@@ -38,7 +38,10 @@ func Execute(args []string) error {
 			return err
 		}
 	}
-	site := newSite(envName, dep)
+	site, err := loadSite(envName, dep)
+	if err != nil {
+		return err
+	}
 	site.incrementVersion(dep)
 	site.compile()
 	site.release() // git commit, tag and push

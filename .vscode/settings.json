@@ -9,4 +9,5 @@
         "coveredGutterStyle": "blockgreen",
         "uncoveredGutterStyle": "blockred"
     },
+    "files.autoSave": "onFocusChange",
 }

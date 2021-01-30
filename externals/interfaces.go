@@ -11,5 +11,5 @@ type DependenciesInterface interface {
 	GetWorkingDir() string
 	DirExists(path string) (bool, error)
 	Println(a ...interface{})
-	GetHugoConfigToml(workingDir string) (string, error)
+	ReadFileContent(filename string) (string, error)
 }

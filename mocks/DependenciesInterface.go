@@ -86,27 +86,6 @@ func (_m *DependenciesInterface) GetFortune() (string, error) {
 	return r0, r1
 }
 
-// GetHugoConfigToml provides a mock function with given fields: workingDir
-func (_m *DependenciesInterface) GetHugoConfigToml(workingDir string) (string, error) {
-	ret := _m.Called(workingDir)
-
-	var r0 string
-	if rf, ok := ret.Get(0).(func(string) string); ok {
-		r0 = rf(workingDir)
-	} else {
-		r0 = ret.Get(0).(string)
-	}
-
-	var r1 error
-	if rf, ok := ret.Get(1).(func(string) error); ok {
-		r1 = rf(workingDir)
-	} else {
-		r1 = ret.Error(1)
-	}
-
-	return r0, r1
-}
-
 // GetHugoWorkingDir provides a mock function with given fields:
 func (_m *DependenciesInterface) GetHugoWorkingDir() string {
 	ret := _m.Called()
@@ -174,4 +153,25 @@ func (_m *DependenciesInterface) Println(a ...interface{}) {
 	var _ca []interface{}
 	_ca = append(_ca, a...)
 	_m.Called(_ca...)
+}
+
+// ReadFileContent provides a mock function with given fields: filename
+func (_m *DependenciesInterface) ReadFileContent(filename string) (string, error) {
+	ret := _m.Called(filename)
+
+	var r0 string
+	if rf, ok := ret.Get(0).(func(string) string); ok {
+		r0 = rf(filename)
+	} else {
+		r0 = ret.Get(0).(string)
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(string) error); ok {
+		r1 = rf(filename)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
 }
