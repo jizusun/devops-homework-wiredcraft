@@ -13,5 +13,5 @@ type DependenciesInterface interface {
 	Println(a ...interface{})
 	ReadFileContent(filename string) ([]byte, error)
 	WriteFile(filename string, data []byte) error
-	AddCommitAndPush(message string, workingDir string) error
+	AddCommitAndPush(message string, workingDir string) (string, error)
 }

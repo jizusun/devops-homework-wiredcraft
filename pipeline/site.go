@@ -85,9 +85,9 @@ func (s *Site) compile(dep externals.DependenciesInterface) error {
 func (s *Site) release(dep externals.DependenciesInterface) error {
 	hugoBranchCommitMessage := "Version: " + s.oldVersion + " => " + s.version
 	// the hugo branch
-	err := dep.AddCommitAndPush(hugoBranchCommitMessage, s.workingDir)
+	commitID, err := dep.AddCommitAndPush(hugoBranchCommitMessage, s.workingDir)
 	// the gh-pages branch, the public folde
 	publicDir := path.Join(s.workingDir + "/public")
-	err = dep.AddCommitAndPush("build site", publicDir)
+	_, err = dep.AddCommitAndPush("Build with "+commitID, publicDir)
 	return err
 }
