@@ -14,4 +14,5 @@ type DependenciesInterface interface {
 	ReadFileContent(filename string) ([]byte, error)
 	WriteFile(filename string, data []byte) error
 	AddCommitAndPush(message string, workingDir string) (string, error)
+	GitTagAndPush(version string, workingDir string) error
 }

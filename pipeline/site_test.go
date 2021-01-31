@@ -72,14 +72,25 @@ func (suite *SiteTestSuite) Test_incrementVersion_Staging() {
 	suite.Equal(suite.site.version, expected)
 }
 
-// func (suite *SiteTestSuite) Test_compile() {
-// 	suite.site.compile(suite.dep)
-// }
+func (suite *SiteTestSuite) Test_compile() {
+	suite.dep.On("ExecHugo", "", "/home/jizu/hugo-website").Return("success", nil)
+	err := suite.site.compile(suite.dep)
+	suite.Nil(err)
+}
 
-// func (suite *SiteTestSuite) Test_release() {
-// 	suite.site.release(suite.dep)
-// }
+func (suite *SiteTestSuite) Test_release_dev() {
+	suite.dep.On("AddCommitAndPush", mock.Anything, mock.Anything).Return("4aff69", nil)
+	err := suite.site.release(suite.dep)
+	suite.Nil(err)
+}
 
+func (suite *SiteTestSuite) Test_release_staging() {
+	suite.site.envName = "staging"
+	suite.dep.On("AddCommitAndPush", mock.Anything, mock.Anything).Return("4aff69", nil)
+	suite.dep.On("GitTagAndPush", mock.Anything, mock.Anything).Return(nil)
+	err := suite.site.release(suite.dep)
+	suite.Nil(err)
+}
 func TestSiteSuite(t *testing.T) {
 	suite.Run(t, new(SiteTestSuite))
 }

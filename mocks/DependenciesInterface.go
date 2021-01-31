@@ -149,6 +149,20 @@ func (_m *DependenciesInterface) GetWorkingDir() string {
 	return r0
 }
 
+// GitTagAndPush provides a mock function with given fields: version, workingDir
+func (_m *DependenciesInterface) GitTagAndPush(version string, workingDir string) error {
+	ret := _m.Called(version, workingDir)
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(string, string) error); ok {
+		r0 = rf(version, workingDir)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
 // JoinPath provides a mock function with given fields: elem
 func (_m *DependenciesInterface) JoinPath(elem ...string) string {
 	_va := make([]interface{}, len(elem))

@@ -6,7 +6,7 @@
     "configurations": [
         
         {
-            "name": "Debug dev",
+            "name": "Debug: dev",
             "type": "go",
             "request": "launch",
             "mode": "debug",
@@ -15,6 +15,17 @@
                 "HUGO_WORK_DIR": "/Users/i337932/Code/devops-homework-wiredcraft"
             },
             "args": ["dev"]
+        }, 
+        {
+            "name": "Debug: staging",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/main.go",
+            "env": {
+                "HUGO_WORK_DIR": "/Users/i337932/Code/devops-homework-wiredcraft"
+            },
+            "args": ["staging"]
         }
 
     ]

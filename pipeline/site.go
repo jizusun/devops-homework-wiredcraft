@@ -90,6 +90,10 @@ func (s *Site) release(dep externals.DependenciesInterface) error {
 		return err
 	}
 	// the gh-pages branch, the public folde
+	if s.envName == "staging" {
+		dep.GitTagAndPush(s.version, s.workingDir)
+	}
+	// the gh-pages branch, the public folder
 	publicDir := path.Join(s.workingDir + "/public")
 	_, err = dep.AddCommitAndPush("Build with "+commitID, publicDir)
 	return err
