@@ -27,6 +27,3 @@ cp themes/ananke/layouts/partials/site-footer.html layouts/partials/site-footer.
 /usr/games/fortune
 
 ```
-
-## References
-- https://github.com/Wiredcraft/test-devops
