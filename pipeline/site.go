@@ -12,9 +12,10 @@ import (
 
 // Site the hugo site
 type Site struct {
-	version    string
 	envName    string
 	workingDir string
+	version    string
+	oldVersion string
 }
 
 func loadSite(envName string, dep externals.DependenciesInterface) (*Site, error) {
@@ -70,6 +71,7 @@ func (s *Site) incrementVersion(dep externals.DependenciesInterface) error {
 	if err != nil {
 		return err
 	}
+	s.oldVersion = s.version
 	s.version = newVersion
 	return nil
 }
@@ -80,6 +82,12 @@ func (s *Site) compile(dep externals.DependenciesInterface) error {
 	return err
 }
 
-func (s *Site) release() {
-
+func (s *Site) release(dep externals.DependenciesInterface) error {
+	hugoBranchCommitMessage := "Version: " + s.oldVersion + " => " + s.version
+	// the hugo branch
+	err := dep.AddCommitAndPush(hugoBranchCommitMessage, s.workingDir)
+	// the gh-pages branch, the public folde
+	publicDir := path.Join(s.workingDir + "/public")
+	err = dep.AddCommitAndPush("build site", publicDir)
+	return err
 }

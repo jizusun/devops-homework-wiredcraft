@@ -9,6 +9,20 @@ type DependenciesInterface struct {
 	mock.Mock
 }
 
+// AddCommitAndPush provides a mock function with given fields: message, workingDir
+func (_m *DependenciesInterface) AddCommitAndPush(message string, workingDir string) error {
+	ret := _m.Called(message, workingDir)
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(string, string) error); ok {
+		r0 = rf(message, workingDir)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
+
 // AppendToFile provides a mock function with given fields: filePath, content
 func (_m *DependenciesInterface) AppendToFile(filePath string, content string) error {
 	ret := _m.Called(filePath, content)

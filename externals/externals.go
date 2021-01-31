@@ -98,7 +98,37 @@ func (dep Dependencies) WriteFile(filename string, data []byte) error {
 	return ioutil.WriteFile(filename, data, 0644)
 }
 
+func execCommandInDir(workingDir string, name string, arg ...string) (string, error) {
+	cmd := exec.Command(name, arg...)
+	cmd.Dir = workingDir
+	out, err := cmd.Output()
+	if err != nil {
+		return "", err
+	}
+	output := string(out[:])
+	return output, nil
+}
+
 // AddCommitAndPush git add -A, git commit, git push
 func (dep Dependencies) AddCommitAndPush(message string, workingDir string) error {
-	return nil
+	fmt.Println("Working dir: " + workingDir)
+	output, err := execCommandInDir(workingDir, "git", "add", "-A")
+	if err != nil {
+		return err
+	}
+	fmt.Println(output)
+
+	output, err = execCommandInDir(workingDir, "git", "commit", "-m", message)
+	if err != nil {
+		return err
+	}
+	fmt.Println(output)
+
+	output, err = execCommandInDir(workingDir, "git", "push")
+	if err != nil {
+		return err
+	}
+	fmt.Println(output)
+
+	return err
 }
