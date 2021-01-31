@@ -2,6 +2,7 @@ package pipeline
 
 import (
 	"errors"
+	"fmt"
 	"path"
 
 	"github.com/blang/semver/v4"
@@ -73,8 +74,10 @@ func (s *Site) incrementVersion(dep externals.DependenciesInterface) error {
 	return nil
 }
 
-func (s *Site) compile() {
-
+func (s *Site) compile(dep externals.DependenciesInterface) error {
+	output, err := dep.ExecHugo("", s.workingDir)
+	fmt.Println(output)
+	return err
 }
 
 func (s *Site) release() {

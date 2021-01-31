@@ -95,8 +95,10 @@ func (dep Dependencies) ReadFileContent(filename string) ([]byte, error) {
 
 // WriteFile wrapper for ioutil.WriteFile
 func (dep Dependencies) WriteFile(filename string, data []byte) error {
-	return nil
-	// return ioutil.WriteFile(filename, data, 0644)
+	return ioutil.WriteFile(filename, data, 0644)
 }
 
-//func ioutil.WriteFile(filename string, data []byte, perm os.FileMode) error
+// AddCommitAndPush git add -A, git commit, git push
+func (dep Dependencies) AddCommitAndPush(message string, workingDir string) error {
+	return nil
+}

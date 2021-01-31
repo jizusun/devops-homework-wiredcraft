@@ -43,7 +43,8 @@ func Execute(args []string) error {
 		return err
 	}
 	site.incrementVersion(dep)
-	site.compile()
+	err = site.compile(dep)
+
 	site.release() // git commit, tag and push
-	return nil
+	return err
 }
