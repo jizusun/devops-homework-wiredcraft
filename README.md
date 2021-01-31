@@ -2,7 +2,6 @@
 
 [![codecov](https://codecov.io/gh/jizusun/devops-homework-wiredcraft/branch/src/graph/badge.svg?token=N0R6ZOVKJ2)](https://codecov.io/gh/jizusun/devops-homework-wiredcraft)
 
-
 ## Getting Started with the development
 
 ```sh
@@ -15,3 +14,7 @@ git worktree add -B src src origin/src
 # switch to the go source code
 cd src
 ```
+
+## References
+
+- https://github.com/Wiredcraft/test-devops
