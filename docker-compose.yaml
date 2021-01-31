@@ -4,10 +4,10 @@ services:
   web:
     image: nginx
     volumes:
-    - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     - ./html:/usr/share/nginx/html
     ports:
     - "8080:80"
-    environment:
-    - NGINX_HOST=foobar.com
-    - NGINX_PORT=80
+    # environment:
+    # - NGINX_HOST=foobar.com
+    # - NGINX_PORT=80
