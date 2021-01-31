@@ -64,14 +64,12 @@ func (s *Site) incrementVersion(dep externals.DependenciesInterface) error {
 		Version: newVersion,
 	}
 	b, _ := toml.Marshal(params)
-
 	paramsTomlPath := path.Join(s.workingDir, "config/_default/params.toml")
-
-	dep.WriteFile(paramsTomlPath, b)
-	// 	if err != nil {
-	// 		return err
-	// 	}
-	// 	s.version = newVersion
+	err := dep.WriteFile(paramsTomlPath, b)
+	if err != nil {
+		return err
+	}
+	s.version = newVersion
 	return nil
 }
 
