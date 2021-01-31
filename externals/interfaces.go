@@ -12,4 +12,5 @@ type DependenciesInterface interface {
 	DirExists(path string) (bool, error)
 	Println(a ...interface{})
 	ReadFileContent(filename string) ([]byte, error)
+	WriteFile(filename string, data []byte) error
 }

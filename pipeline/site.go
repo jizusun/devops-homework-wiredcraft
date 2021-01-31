@@ -25,12 +25,12 @@ func loadSite(envName string, dep externals.DependenciesInterface) (*Site, error
 	if err != nil {
 		return nil, err
 	}
-
 	return &Site{version: version, envName: envName, workingDir: workingDir}, nil
 }
 
 func getCurrentVersion(dep externals.DependenciesInterface, workingDir string) (string, error) {
-	bytes, err := dep.ReadFileContent(path.Join(workingDir, "config/_default/params.toml"))
+	paramsTomlPath := path.Join(workingDir, "config/_default/params.toml")
+	bytes, err := dep.ReadFileContent(paramsTomlPath)
 	if err != nil {
 		return "", err
 	}
@@ -58,10 +58,21 @@ func (s *Site) getIncrementedVersion(currentVersion string) string {
 
 }
 
-func (s *Site) incrementVersion(dep externals.DependenciesInterface) {
+func (s *Site) incrementVersion(dep externals.DependenciesInterface) error {
 	newVersion := s.getIncrementedVersion(s.version)
+	params := &hugoConfigParamsToml{
+		Version: newVersion,
+	}
+	b, _ := toml.Marshal(params)
 
-	s.version = newVersion
+	paramsTomlPath := path.Join(s.workingDir, "config/_default/params.toml")
+
+	dep.WriteFile(paramsTomlPath, b)
+	// 	if err != nil {
+	// 		return err
+	// 	}
+	// 	s.version = newVersion
+	return nil
 }
 
 func (s *Site) compile() {

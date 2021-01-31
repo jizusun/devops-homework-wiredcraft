@@ -88,7 +88,15 @@ func (dep Dependencies) Println(a ...interface{}) {
 	fmt.Println(a...)
 }
 
-// ReadFileContent wrapper for ioutil.Readfile, but returns string
+// ReadFileContent wrapper for ioutil.Readfile
 func (dep Dependencies) ReadFileContent(filename string) ([]byte, error) {
 	return ioutil.ReadFile(filename)
 }
+
+// WriteFile wrapper for ioutil.WriteFile
+func (dep Dependencies) WriteFile(filename string, data []byte) error {
+	return nil
+	// return ioutil.WriteFile(filename, data, 0644)
+}
+
+//func ioutil.WriteFile(filename string, data []byte, perm os.FileMode) error

@@ -177,3 +177,17 @@ func (_m *DependenciesInterface) ReadFileContent(filename string) ([]byte, error
 
 	return r0, r1
 }
+
+// WriteFile provides a mock function with given fields: filename, data
+func (_m *DependenciesInterface) WriteFile(filename string, data []byte) error {
+	ret := _m.Called(filename, data)
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(string, []byte) error); ok {
+		r0 = rf(filename, data)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
+}
