@@ -2,6 +2,10 @@
 
 [![codecov](https://codecov.io/gh/jizusun/devops-homework-wiredcraft/branch/src/graph/badge.svg?token=N0R6ZOVKJ2)](https://codecov.io/gh/jizusun/devops-homework-wiredcraft)
 
+# <<<<<<< HEAD
+
+> > > > > > > origin/src
+
 ## Getting Started with the development
 
 ```sh
