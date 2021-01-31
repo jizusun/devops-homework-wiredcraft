@@ -11,4 +11,7 @@ type DependenciesInterface interface {
 	GetWorkingDir() string
 	DirExists(path string) (bool, error)
 	Println(a ...interface{})
+	ReadFileContent(filename string) ([]byte, error)
+	WriteFile(filename string, data []byte) error
+	AddCommitAndPush(message string, workingDir string) (string, error)
 }

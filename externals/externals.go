@@ -2,6 +2,7 @@ package externals
 
 import (
 	"fmt"
+	"io/ioutil"
 	"os"
 	"os/exec"
 	"path"
@@ -85,4 +86,50 @@ func (dep Dependencies) DirExists(path string) (bool, error) {
 // Println wrapper for fmt.Println
 func (dep Dependencies) Println(a ...interface{}) {
 	fmt.Println(a...)
+}
+
+// ReadFileContent wrapper for ioutil.Readfile
+func (dep Dependencies) ReadFileContent(filename string) ([]byte, error) {
+	return ioutil.ReadFile(filename)
+}
+
+// WriteFile wrapper for ioutil.WriteFile
+func (dep Dependencies) WriteFile(filename string, data []byte) error {
+	return ioutil.WriteFile(filename, data, 0644)
+}
+
+func execCommandInDir(workingDir string, name string, arg ...string) (string, error) {
+	cmd := exec.Command(name, arg...)
+	cmd.Dir = workingDir
+	out, err := cmd.Output()
+	if err != nil {
+		return "", err
+	}
+	output := string(out[:])
+	return output, nil
+}
+
+// AddCommitAndPush git add -A, git commit, git push
+func (dep Dependencies) AddCommitAndPush(message string, workingDir string) (string, error) {
+	fmt.Println("Working dir: " + workingDir)
+	output, err := execCommandInDir(workingDir, "git", "add", "-A")
+	if err != nil {
+		return "", err
+	}
+	fmt.Println(output)
+
+	output, err = execCommandInDir(workingDir, "git", "commit", "-m", message)
+	if err != nil {
+		return "", err
+	}
+	fmt.Println(output)
+
+	output, err = execCommandInDir(workingDir, "git", "push")
+	if err != nil {
+		return "", err
+	}
+	fmt.Println("git push finished.")
+
+	commitID, err := execCommandInDir(workingDir, "git", "rev-parse", "HEAD")
+	return commitID, err
 }

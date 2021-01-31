@@ -9,6 +9,27 @@ type DependenciesInterface struct {
 	mock.Mock
 }
 
+// AddCommitAndPush provides a mock function with given fields: message, workingDir
+func (_m *DependenciesInterface) AddCommitAndPush(message string, workingDir string) (string, error) {
+	ret := _m.Called(message, workingDir)
+
+	var r0 string
+	if rf, ok := ret.Get(0).(func(string, string) string); ok {
+		r0 = rf(message, workingDir)
+	} else {
+		r0 = ret.Get(0).(string)
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(string, string) error); ok {
+		r1 = rf(message, workingDir)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
 // AppendToFile provides a mock function with given fields: filePath, content
 func (_m *DependenciesInterface) AppendToFile(filePath string, content string) error {
 	ret := _m.Called(filePath, content)
@@ -153,4 +174,41 @@ func (_m *DependenciesInterface) Println(a ...interface{}) {
 	var _ca []interface{}
 	_ca = append(_ca, a...)
 	_m.Called(_ca...)
+}
+
+// ReadFileContent provides a mock function with given fields: filename
+func (_m *DependenciesInterface) ReadFileContent(filename string) ([]byte, error) {
+	ret := _m.Called(filename)
+
+	var r0 []byte
+	if rf, ok := ret.Get(0).(func(string) []byte); ok {
+		r0 = rf(filename)
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]byte)
+		}
+	}
+
+	var r1 error
+	if rf, ok := ret.Get(1).(func(string) error); ok {
+		r1 = rf(filename)
+	} else {
+		r1 = ret.Error(1)
+	}
+
+	return r0, r1
+}
+
+// WriteFile provides a mock function with given fields: filename, data
+func (_m *DependenciesInterface) WriteFile(filename string, data []byte) error {
+	ret := _m.Called(filename, data)
+
+	var r0 error
+	if rf, ok := ret.Get(0).(func(string, []byte) error); ok {
+		r0 = rf(filename, data)
+	} else {
+		r0 = ret.Error(0)
+	}
+
+	return r0
 }
