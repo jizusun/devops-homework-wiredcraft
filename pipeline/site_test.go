@@ -76,10 +76,19 @@ func (suite *SiteTestSuite) Test_incrementVersion_Staging() {
 // 	suite.site.compile(suite.dep)
 // }
 
-// func (suite *SiteTestSuite) Test_release() {
-// 	suite.site.release(suite.dep)
-// }
+func (suite *SiteTestSuite) Test_release_dev() {
+	suite.dep.On("AddCommitAndPush", mock.Anything, mock.Anything).Return("4aff69", nil)
+	actual := suite.site.release(suite.dep)
+	suite.Nil(actual)
+}
 
+func (suite *SiteTestSuite) Test_release_staging() {
+	suite.site.envName = "staging"
+	suite.dep.On("AddCommitAndPush", mock.Anything, mock.Anything).Return("4aff69", nil)
+	suite.dep.On("GitTagAndPush", mock.Anything, mock.Anything).Return(nil)
+	actual := suite.site.release(suite.dep)
+	suite.Nil(actual)
+}
 func TestSiteSuite(t *testing.T) {
 	suite.Run(t, new(SiteTestSuite))
 }
