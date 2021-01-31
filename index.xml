@@ -2,90 +2,99 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My Fortunes</title>
-    <link>http://example.org/</link>
+    <link>/</link>
     <description>Recent content on My Fortunes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 31 Jan 2021 22:06:41 +0800</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 31 Jan 2021 22:27:47 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2021-01-31T22:27:46&#43;08:00</title>
+      <link>/posts/2021-01-31t222746&#43;0800/</link>
+      <pubDate>Sun, 31 Jan 2021 22:27:47 +0800</pubDate>
+      
+      <guid>/posts/2021-01-31t222746&#43;0800/</guid>
+      <description>&amp;ldquo;Atomic batteries to power, turbines to speed.&amp;rdquo; &amp;ndash; Robin, The Boy Wonder</description>
+    </item>
+    
     <item>
       <title>2021-01-31T22:06:41&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t220641&#43;0800/</link>
+      <link>/posts/2021-01-31t220641&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 22:06:41 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t220641&#43;0800/</guid>
+      <guid>/posts/2021-01-31t220641&#43;0800/</guid>
       <description>You go slow, be gentle. It&amp;rsquo;s no one-way street &amp;ndash; you know how you feel and that&amp;rsquo;s all. It&amp;rsquo;s how the girl feels too. Don&amp;rsquo;t press. If the girl feels anything for you at all, you&amp;rsquo;ll know. &amp;ndash; Kirk, &amp;ldquo;Charlie X&amp;rdquo;, stardate 1535.8</description>
     </item>
     
     <item>
       <title>2021-01-31T17:33:09&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t173309&#43;0800/</link>
+      <link>/posts/2021-01-31t173309&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 17:33:10 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t173309&#43;0800/</guid>
+      <guid>/posts/2021-01-31t173309&#43;0800/</guid>
       <description>&amp;ldquo;Gotcha, you snot-necked weenies!&amp;rdquo; &amp;ndash; Post Bros. Comics</description>
     </item>
     
     <item>
       <title>2021-01-31T17:28:01&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t172801&#43;0800/</link>
+      <link>/posts/2021-01-31t172801&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 17:28:02 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t172801&#43;0800/</guid>
+      <guid>/posts/2021-01-31t172801&#43;0800/</guid>
       <description>When a place gets crowded enough to require ID&amp;rsquo;s, social collapse is not far away. It is time to go elsewhere. The best thing about space travel is that it made it possible to go elsewhere. &amp;ndash; R.A. Heinlein, &amp;ldquo;Time Enough For Love&amp;rdquo;</description>
     </item>
     
     <item>
       <title>2021-01-31T17:24:52&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t172452&#43;0800/</link>
+      <link>/posts/2021-01-31t172452&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 17:24:53 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t172452&#43;0800/</guid>
+      <guid>/posts/2021-01-31t172452&#43;0800/</guid>
       <description>You&amp;rsquo;ve been leading a dog&amp;rsquo;s life. Stay off the furniture.</description>
     </item>
     
     <item>
       <title>2021-01-31T17:19:14&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t171914&#43;0800/</link>
+      <link>/posts/2021-01-31t171914&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 17:19:15 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t171914&#43;0800/</guid>
+      <guid>/posts/2021-01-31t171914&#43;0800/</guid>
       <description>An INK-LING? Sure &amp;ndash; TAKE one!! Did you BUY any COMMUNIST UNIFORMS??</description>
     </item>
     
     <item>
       <title>2021-01-31T17:17:59&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t171759&#43;0800/</link>
+      <link>/posts/2021-01-31t171759&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 17:18:00 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t171759&#43;0800/</guid>
+      <guid>/posts/2021-01-31t171759&#43;0800/</guid>
       <description>The only way to learn a new programming language is by writing programs in it.
  Brian Kernighan  </description>
     </item>
     
     <item>
       <title>2021-01-31T17:16:30&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t171630&#43;0800/</link>
+      <link>/posts/2021-01-31t171630&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 17:16:31 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t171630&#43;0800/</guid>
+      <guid>/posts/2021-01-31t171630&#43;0800/</guid>
       <description>You&amp;rsquo;d better smile when they watch you, smile like you&amp;rsquo;re in control. &amp;ndash; Smile, &amp;ldquo;Was (Not Was)&amp;rdquo;</description>
     </item>
     
     <item>
       <title>2021-01-31T17:04:22&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t170422&#43;0800/</link>
+      <link>/posts/2021-01-31t170422&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 17:04:23 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t170422&#43;0800/</guid>
+      <guid>/posts/2021-01-31t170422&#43;0800/</guid>
       <description>The modern child will answer you back before you&amp;rsquo;ve said anything. &amp;ndash; Laurence J. Peter</description>
     </item>
     
     <item>
       <title>2021-01-31T17:01:50&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t170150&#43;0800/</link>
+      <link>/posts/2021-01-31t170150&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 17:01:50 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t170150&#43;0800/</guid>
+      <guid>/posts/2021-01-31t170150&#43;0800/</guid>
       <description>A CODE OF ETHICAL BEHAVIOR FOR PATIENTS:
   DO NOT EXPECT YOUR DOCTOR TO SHARE YOUR DISCOMFORT. Involvement with the patient&amp;rsquo;s suffering might cause him to lose valuable scientific objectivity.
   BE CHEERFUL AT ALL TIMES. Your doctor leads a busy and trying life and requires all the gentleness and reassurance he can get.
@@ -94,191 +103,191 @@
     
     <item>
       <title>2021-01-31T16:55:25&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t165525&#43;0800/</link>
+      <link>/posts/2021-01-31t165525&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 16:55:26 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t165525&#43;0800/</guid>
+      <guid>/posts/2021-01-31t165525&#43;0800/</guid>
       <description>There is nothing wrong with abstinence, in moderation.</description>
     </item>
     
     <item>
       <title>2021-01-31T16:46:22&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t164622&#43;0800/</link>
+      <link>/posts/2021-01-31t164622&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 16:46:22 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t164622&#43;0800/</guid>
+      <guid>/posts/2021-01-31t164622&#43;0800/</guid>
       <description>Power is danger. &amp;ndash; The Centurion, &amp;ldquo;Balance of Terror&amp;rdquo;, stardate 1709.2</description>
     </item>
     
     <item>
       <title>2021-01-31T16:45:12&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t164512&#43;0800/</link>
+      <link>/posts/2021-01-31t164512&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 16:45:13 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t164512&#43;0800/</guid>
+      <guid>/posts/2021-01-31t164512&#43;0800/</guid>
       <description>Meade&amp;rsquo;s Maxim: Always remember that you are absolutely unique, just like everyone else.</description>
     </item>
     
     <item>
       <title>2021-01-31T16:44:38&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t164438&#43;0800/</link>
+      <link>/posts/2021-01-31t164438&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 16:44:39 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t164438&#43;0800/</guid>
+      <guid>/posts/2021-01-31t164438&#43;0800/</guid>
       <description>Only through hard work and perseverance can one truly suffer.</description>
     </item>
     
     <item>
       <title>2021-01-31T16:35:51&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t163551&#43;0800/</link>
+      <link>/posts/2021-01-31t163551&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 16:35:51 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t163551&#43;0800/</guid>
+      <guid>/posts/2021-01-31t163551&#43;0800/</guid>
       <description>A man always needs to remember one thing about a beautiful woman.
 Somewhere, somebody&amp;rsquo;s tired of her.</description>
     </item>
     
     <item>
       <title>2021-01-31T15:47:37&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t154737&#43;0800/</link>
+      <link>/posts/2021-01-31t154737&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 15:47:38 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t154737&#43;0800/</guid>
+      <guid>/posts/2021-01-31t154737&#43;0800/</guid>
       <description>Anti-trust laws should be approached with exactly that attitude.</description>
     </item>
     
     <item>
       <title>2021-01-31T15:45:23&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t154523&#43;0800/</link>
+      <link>/posts/2021-01-31t154523&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 15:45:23 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t154523&#43;0800/</guid>
+      <guid>/posts/2021-01-31t154523&#43;0800/</guid>
       <description>Our [softball] team usually puts the other woman at second base, where the maximum possible number of males can get there on short notice to help out in case of emergency. As far as I can tell, our second basewoman is a pretty good baseball player, better than I am, anyway, but there&amp;rsquo;s no way to know for sure because if the ball gets anywhere near her, a male comes barging over from, say, right field, to deal with it.</description>
     </item>
     
     <item>
       <title>2021-01-31T15:45:07&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t154507&#43;0800/</link>
+      <link>/posts/2021-01-31t154507&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 15:45:08 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t154507&#43;0800/</guid>
+      <guid>/posts/2021-01-31t154507&#43;0800/</guid>
       <description>The final delusion is the belief that one has lost all delusions. &amp;ndash; Maurice Chapelain, &amp;ldquo;Main courante&amp;rdquo;</description>
     </item>
     
     <item>
       <title>2021-01-31T15:44:39&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t154439&#43;0800/</link>
+      <link>/posts/2021-01-31t154439&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 15:44:40 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t154439&#43;0800/</guid>
+      <guid>/posts/2021-01-31t154439&#43;0800/</guid>
       <description>Death is Nature&amp;rsquo;s way of recycling human beings.</description>
     </item>
     
     <item>
       <title>2021-01-31T15:42:37&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t154237&#43;0800/</link>
+      <link>/posts/2021-01-31t154237&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 15:42:38 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t154237&#43;0800/</guid>
+      <guid>/posts/2021-01-31t154237&#43;0800/</guid>
       <description>&amp;lsquo;Scuse me, while I kiss the sky! &amp;ndash; Robert James Marshall (Jimi) Hendrix</description>
     </item>
     
     <item>
       <title>2021-01-31T15:39:50&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t153950&#43;0800/</link>
+      <link>/posts/2021-01-31t153950&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 15:39:51 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t153950&#43;0800/</guid>
+      <guid>/posts/2021-01-31t153950&#43;0800/</guid>
       <description>The judge fined the jaywalker fifty dollars and told him if he was  caught again, he would be thrown in jail. Fine today, cooler tomorrow.</description>
     </item>
     
     <item>
       <title>2021-01-31T14:13:57&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t141357&#43;0800/</link>
+      <link>/posts/2021-01-31t141357&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 14:13:58 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t141357&#43;0800/</guid>
+      <guid>/posts/2021-01-31t141357&#43;0800/</guid>
       <description>If ignorance is bliss, why aren&amp;rsquo;t there more happy people?</description>
     </item>
     
     <item>
       <title>2021-01-31T14:06:32&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t140632&#43;0800/</link>
+      <link>/posts/2021-01-31t140632&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 14:06:32 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t140632&#43;0800/</guid>
+      <guid>/posts/2021-01-31t140632&#43;0800/</guid>
       <description>I used to think I was indecisive, but now I&amp;rsquo;m not so sure.</description>
     </item>
     
     <item>
       <title>2021-01-31T14:03:54&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t140354&#43;0800/</link>
+      <link>/posts/2021-01-31t140354&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 14:03:55 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t140354&#43;0800/</guid>
+      <guid>/posts/2021-01-31t140354&#43;0800/</guid>
       <description>&amp;ldquo;Even more amazing was the realization that God has Internet access. I wonder if He has a full newsfeed?&amp;rdquo; (By Matt Welsh)</description>
     </item>
     
     <item>
       <title>2021-01-31T14:03:04&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t140304&#43;0800/</link>
+      <link>/posts/2021-01-31t140304&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 14:03:04 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t140304&#43;0800/</guid>
+      <guid>/posts/2021-01-31t140304&#43;0800/</guid>
       <description>I&amp;rsquo;d rather push my Harley than ride a rice burner.</description>
     </item>
     
     <item>
       <title>2021-01-31T14:01:07&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t140107&#43;0800/</link>
+      <link>/posts/2021-01-31t140107&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 14:01:08 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t140107&#43;0800/</guid>
+      <guid>/posts/2021-01-31t140107&#43;0800/</guid>
       <description>ASCII: The control code for all beginning programmers and those who would become computer literate. Etymologically, the term has come down as a contraction of the often-repeated phrase &amp;ldquo;ascii and you shall receive.&amp;rdquo; &amp;ndash; Robb Russon</description>
     </item>
     
     <item>
       <title>2021-01-31T13:53:36&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t135336&#43;0800/</link>
+      <link>/posts/2021-01-31t135336&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 13:53:37 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t135336&#43;0800/</guid>
+      <guid>/posts/2021-01-31t135336&#43;0800/</guid>
       <description>does your DRESSING ROOM have enough ASPARAGUS?</description>
     </item>
     
     <item>
       <title>2021-01-31T13:51:35&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-31t135135&#43;0800/</link>
+      <link>/posts/2021-01-31t135135&#43;0800/</link>
       <pubDate>Sun, 31 Jan 2021 13:51:35 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-31t135135&#43;0800/</guid>
+      <guid>/posts/2021-01-31t135135&#43;0800/</guid>
       <description>The use of money is all the advantage there is to having money. &amp;ndash; B. Franklin</description>
     </item>
     
     <item>
       <title>2021-01-27T23:21:47&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-27t232147&#43;0800/</link>
+      <link>/posts/2021-01-27t232147&#43;0800/</link>
       <pubDate>Wed, 27 Jan 2021 23:21:48 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-27t232147&#43;0800/</guid>
+      <guid>/posts/2021-01-27t232147&#43;0800/</guid>
       <description>&amp;ldquo;We don&amp;rsquo;t have to protect the environment &amp;ndash; the Second Coming is at hand.&amp;rdquo; &amp;ndash; James Watt</description>
     </item>
     
     <item>
       <title>2021-01-27T22:58:52&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-27t225852&#43;0800/</link>
+      <link>/posts/2021-01-27t225852&#43;0800/</link>
       <pubDate>Wed, 27 Jan 2021 22:58:52 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-27t225852&#43;0800/</guid>
+      <guid>/posts/2021-01-27t225852&#43;0800/</guid>
       <description>Nothing, nothing, nothing, no error, no crime is so absolutely repugnant to God as everything which is official; and why? because the official is so impersonal and therefore the deepest insult which can be offered to a personality. &amp;ndash; Soren Kierkegaard</description>
     </item>
     
     <item>
       <title>2021-01-27T22:58:41&#43;08:00</title>
-      <link>http://example.org/posts/2021-01-27t225841&#43;0800/</link>
+      <link>/posts/2021-01-27t225841&#43;0800/</link>
       <pubDate>Wed, 27 Jan 2021 22:58:41 +0800</pubDate>
       
-      <guid>http://example.org/posts/2021-01-27t225841&#43;0800/</guid>
+      <guid>/posts/2021-01-27t225841&#43;0800/</guid>
       <description>All constants are variables.</description>
     </item>
     
