@@ -109,6 +109,21 @@ func execCommandInDir(workingDir string, name string, arg ...string) (string, er
 	return output, nil
 }
 
+// GitTagAndPush tag the version and push
+func (dep Dependencies) GitTagAndPush(version string, workingDir string) error {
+	_, err := execCommandInDir(workingDir, "git", "tag", version)
+	if err != nil {
+		return err
+	}
+	fmt.Println("git tag " + version)
+	_, err = execCommandInDir(workingDir, "git", "push", "origin", version)
+	if err != nil {
+		return err
+	}
+	fmt.Println("git push origin " + version)
+	return nil
+}
+
 // AddCommitAndPush git add -A, git commit, git push
 func (dep Dependencies) AddCommitAndPush(message string, workingDir string) (string, error) {
 	fmt.Println("Working dir: " + workingDir)
