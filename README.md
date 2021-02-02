@@ -1,9 +1,6 @@
 # devops-test 
 
 
-- http://dev.wiredcraft.edtechstar.com/
-- http://staging.wiredcraft.edtechstar.com/
-
 ## Set the hugo template
 
 ```sh
