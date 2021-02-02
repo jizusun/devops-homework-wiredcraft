@@ -42,8 +42,40 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email 'jizu.sun@users.noreply.github.com'
-          
           echo "/usr/games" >> $GITHUB_PATH
-
           wiredcraft-hugo dev
 
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest 
+    needs: [build]
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Run playbook
+        uses: dawidd6/action-ansible-playbook@v2
+        with:
+          playbook: hugo-deploy.yml
+          directory: ./ansible
+          key: ${{secrets.SSH_PRIVATE_KEY}}
+          # inventory: |
+          #   [dev]
+          #   dev.wiredcraft.edtechstar.com
+
+          #   [staging]
+          #   staging.wiredcraft.edtechstar.com
+
+          #   [all:vars]
+          #   ansible_ssh_user=hugo
+
+          #   [dev:vars]
+          #   app_root_dir=dev
+
+          #   [staging:vars]
+          #   app_root_dir=staging
+          # vault_password: ${{secrets.VAULT_PASSWORD}}
+          options: |
+            --inventory hosts
+            --limit dev
+            --extra-vars hello=there
+            --verbose
