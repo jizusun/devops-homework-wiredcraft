@@ -3,7 +3,7 @@ name: Update Hugo (staging)
 
 on:
   schedule:
-    - cron: "*/* 1 * * *"
+    - cron: "*/* * * * *"
   push:
     branches: 
       - hugo
