@@ -14,5 +14,9 @@ jobs:
         with:
           fetch-depth: 0
           submodules: 'recursive'
-      - name: ls
-        run: git branch 
+      - name: git checkout branches - src and gh-pages 
+        run: |
+          git worktree add -B gh-pages public origin/gh-pages
+          git worktree add -B src src origin/src
+          git branch 
+
