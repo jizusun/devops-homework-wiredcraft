@@ -58,6 +58,9 @@ jobs:
         with:
           fetch-depth: 0
           submodules: 'recursive'
+      - name: Show the website version
+        run: |
+          cat config/_default/params.toml
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
