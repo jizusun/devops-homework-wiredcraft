@@ -1,12 +1,12 @@
-name: Update Hugo (dev)
+name: Update Hugo (staging)
 
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
-  # push:
-  #   branches: 
-  #     - hugo
+    - cron: "*/* 1 * * *"
+  push:
+    branches: 
+      - hugo
 
 jobs:
   build:
@@ -46,7 +46,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email 'jizu.sun@users.noreply.github.com'
           echo "/usr/games" >> $GITHUB_PATH
-          wiredcraft-hugo dev
+          wiredcraft-hugo staging
 
   deploy:
     name: Deploy
@@ -76,9 +76,9 @@ jobs:
           key: ${{secrets.SSH_PRIVATE_KEY}}
           options: |
             --inventory hosts
-            --limit dev
+            --limit staging
             --extra-vars hello=there
             --verbose
       - name: Check the deployed version 
         run: |
-          curl -s http://dev.wiredcraft.edtechstar.com/ | grep Version
+          curl -s http://staging.wiredcraft.edtechstar.com/ | grep Version
