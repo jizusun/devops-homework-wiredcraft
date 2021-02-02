@@ -44,11 +44,6 @@ jobs:
           git config --global user.email 'jizu.sun@users.noreply.github.com'
           
           echo "/usr/games" >> $GITHUB_PATH
-          fortune >> README.md
-
-          git add README.md
-          git commit -m 'add fortune'
-          git push 
 
           wiredcraft-hugo dev
 
