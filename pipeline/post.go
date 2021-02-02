@@ -35,7 +35,7 @@ func (p *Post) contentFolderExist(dep externals.DependenciesInterface) bool {
 func (p *Post) save(dep externals.DependenciesInterface) error {
 	isCorrectWorkingDir := p.contentFolderExist(dep)
 	if !isCorrectWorkingDir {
-		return errors.New("Make the folder exists: content")
+		return errors.New("The folder is required: content")
 	}
 	output, err := dep.ExecHugo("new "+p.kind+"/"+p.fileName, p.workingDir)
 	dep.Println(output)
