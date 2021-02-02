@@ -27,3 +27,8 @@ cp themes/ananke/layouts/partials/site-footer.html layouts/partials/site-footer.
 /usr/games/fortune
 
 ```
+
+## 
+
+## References
+- https://www.docker.com/blog/multi-arch-build-and-images-the-simple-way/

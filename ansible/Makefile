@@ -11,4 +11,4 @@ deploy-dev:
 	ansible-playbook hugo-deploy.yml -i hosts -l dev
 
 deploy-staging:
-	ansible-playbook hugo-deploy.yml -i hosts -l dev
+	ansible-playbook hugo-deploy.yml -i hosts -l staging
