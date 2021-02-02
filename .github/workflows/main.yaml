@@ -32,8 +32,6 @@ jobs:
       - name: Install fortune
         run: |
           sudo apt-get install fortune
-          /usr/games/fortune
-          fortune
 
       - name: Build
         run: |
@@ -42,6 +40,8 @@ jobs:
 
       - name: Update Hugo
         run: |
-          which wiredcraft-hugo
+          /usr/games/fortune
+          echo "/usr/games" >> $GITHUB_PATH
+          fortune
           wiredcraft-hugo dev
 
