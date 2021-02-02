@@ -23,45 +23,21 @@
     file:
       path: /usr/share/nginx/html/dev/
       state: directory
-
-  - name: Creates the staging directory
+  - name: Creates staging directory
     file:
       path: /usr/share/nginx/html/staging/
       state: directory
-
-  - name: Update Nginx Config
-    template:
-      src: nginx.conf
-      dest: /etc/nginx/nginx.conf
-    notify: Reload Nginx
 
   - name: Insert dev Page
     template:
       src: index-dev.html
       dest: /usr/share/nginx/html/dev/index.html
-  
   - name: Insert staging Page
     template:
       src: index-staging.html
       dest: /usr/share/nginx/html/staging/index.html
 
-  - name: Update Nginx Config
-    template:
-      src: nginx.conf
-      dest: /etc/nginx/nginx.conf
- 
   - name: Start NGiNX
     service:
       name: nginx
       state: started
-  
-  handlers:
-    - name: Reload Nginx
-      service:
-        name: nginx
-        state: reloaded
-
-    - name: Restart Nginx
-      service:
-        name: nginx
-        state: restarted
