@@ -6,6 +6,7 @@
 
 ```sh
 git clone --recurse-submodules git@github.com:jizusun/devops-homework-wiredcraft.git
+cd devops-homework-wiredcraft
 git checkout hugo
 # https://gohugo.io/hosting-and-deployment/hosting-on-github/
 # checkout branches into subfolders
