@@ -17,8 +17,4 @@ cd src
 
 ## Hugo templates, Ansible, and terraform
 
-Check the [hugo](tree/hugo) branch
-
-```
-
-```
+Check the [hugo](https://github.com/jizusun/devops-homework-wiredcraft/tree/hugo) branch
