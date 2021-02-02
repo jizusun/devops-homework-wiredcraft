@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  centos7:
+    build: ./centos7
+    ports:
+      - "2222:22"
+      - "8081:80"
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup
+    privileged: true
