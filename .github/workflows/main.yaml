@@ -29,6 +29,12 @@ jobs:
         with:
           hugo-version: '0.79.1'
 
+      - name: Install fortune
+        run: |
+          sudo apt-get install fortune
+          /usr/games/fortune
+          fortune
+
       - name: Build
         run: |
           cd src
