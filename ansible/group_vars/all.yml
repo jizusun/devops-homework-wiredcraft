@@ -1,0 +1,5 @@
+---
+# Web Server Setup
+http_host: "{{ ansible_facts.eth0.ipv4.address }}"
+remote_www_root: /usr/share/nginx/html
+document_root: "{{ remote_www_root }}/{{ app_root_dir }}"

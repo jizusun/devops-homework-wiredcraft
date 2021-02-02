@@ -1,6 +1,0 @@
-[dev]
-localhost
-
-[dev:vars]
-ansible_ssh_user=vagrant
-ansible_ssh_common_args='-F ssh.cfg'
