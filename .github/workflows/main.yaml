@@ -40,7 +40,9 @@ jobs:
 
       - name: Update Hugo
         run: |
-          /usr/games/fortune
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email 'jizu.sun@users.noreply.github.com'
+
           echo "/usr/games" >> $GITHUB_PATH
           fortune
           wiredcraft-hugo dev
