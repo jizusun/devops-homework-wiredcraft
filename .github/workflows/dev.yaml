@@ -1,9 +1,12 @@
-name: Update Hugo
+name: Update Hugo (dev)
+
 
 on:
-  push:
-    branches: 
-      - hugo
+  schedule:
+    - cron: "*/10 * * * *"
+  # push:
+  #   branches: 
+  #     - hugo
 
 jobs:
   build:
@@ -68,22 +71,6 @@ jobs:
           playbook: hugo-deploy.yml
           directory: ./ansible
           key: ${{secrets.SSH_PRIVATE_KEY}}
-          # inventory: |
-          #   [dev]
-          #   dev.wiredcraft.edtechstar.com
-
-          #   [staging]
-          #   staging.wiredcraft.edtechstar.com
-
-          #   [all:vars]
-          #   ansible_ssh_user=hugo
-
-          #   [dev:vars]
-          #   app_root_dir=dev
-
-          #   [staging:vars]
-          #   app_root_dir=staging
-          # vault_password: ${{secrets.VAULT_PASSWORD}}
           options: |
             --inventory hosts
             --limit dev

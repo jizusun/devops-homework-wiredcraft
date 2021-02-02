@@ -1,6 +1,9 @@
 # devops-test 
 
 
+- http://dev.wiredcraft.edtechstar.com/
+- http://staging.wiredcraft.edtechstar.com/
+
 ## Set the hugo template
 
 ```sh
@@ -16,3 +19,5 @@ cp themes/ananke/layouts/partials/site-footer.html layouts/partials/site-footer.
 
 ## References
 - https://www.docker.com/blog/multi-arch-build-and-images-the-simple-way/
+
+
