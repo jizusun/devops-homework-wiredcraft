@@ -26,11 +26,9 @@ jobs:
       - name: Build
         run: |
           cd src
-          make build
-          echo $PATH
+          go install
       - name: Update Hugo
         run: |
-          echo "$PWD/src/build" >> $GITHUB_PATH
-          which main
-          main dev
+          which wiredcraft-hugo
+          wiredcraft-hugo dev
 
