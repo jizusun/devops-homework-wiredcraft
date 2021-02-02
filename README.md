@@ -1,5 +1,12 @@
 # devops-test 
 
+![Update Hugo (dev)](https://github.com/jizusun/devops-homework-wiredcraft/workflows/Update%20Hugo%20(dev)/badge.svg)
+
+- http://dev.wiredcraft.edtechstar.com/
+- http://staging.wiredcraft.edtechstar.com/
+- https://github.com/jizusun/devops-homework-wiredcraft/actions
+- https://github.com/Wiredcraft/test-devops
+
 
 ## Set the hugo template
 
@@ -17,4 +24,4 @@ cp themes/ananke/layouts/partials/site-footer.html layouts/partials/site-footer.
 ## References
 - https://www.docker.com/blog/multi-arch-build-and-images-the-simple-way/
 
-
+Check the [src](https://github.com/jizusun/devops-homework-wiredcraft/tree/src) branch

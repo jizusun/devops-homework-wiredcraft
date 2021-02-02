@@ -2,11 +2,9 @@ name: Update Hugo (staging)
 
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 * * * *"
-  # push:
-  #   branches: 
-  #     - hugo
 
 jobs:
   build:
