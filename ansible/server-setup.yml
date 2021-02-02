@@ -14,6 +14,11 @@
       name: nginx
       state: present
 
+  - name: Install rsync
+    yum:
+      name: rsync
+      state: present
+
   - name: Creates dev directory
     file:
       path: /usr/share/nginx/html/dev/
@@ -50,9 +55,6 @@
       name: nginx
       state: started
   
-
-
-
   handlers:
     - name: Reload Nginx
       service:

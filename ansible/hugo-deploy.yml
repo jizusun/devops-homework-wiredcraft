@@ -1,0 +1,15 @@
+---
+- name: Deploy
+  hosts: all
+  become: true
+  tasks:
+    - name: Make sure the remote app root exists and has the right permissions
+      file:
+        path: "{{ document_root }}"
+        state: directory
+        mode: '0755'
+    - name: Rsync application files to the remote server
+      synchronize:
+        src: "../public/"
+        dest: "{{ document_root }}"
+        use_ssh_args : true
