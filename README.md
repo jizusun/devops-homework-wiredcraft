@@ -15,9 +15,10 @@ git worktree add -B src src origin/src
 cd src
 ```
 
-```
-
 ## Hugo templates, Ansible, and terraform
 
 Check the [hugo](tree/hugo) branch
+
+```
+
 ```
