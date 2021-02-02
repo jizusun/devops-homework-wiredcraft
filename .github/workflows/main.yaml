@@ -19,4 +19,17 @@ jobs:
           git worktree add -B gh-pages public origin/gh-pages
           git worktree add -B src src origin/src
           git branch 
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.15
+      - name: Build
+        run: |
+          cd src
+          make build
+          mv build/main build/hugoctl
+          export PATH=$PATH:$PWD/build
+      - name: Update Hugo
+        run: |
+          hugoctl dev
 
