@@ -4,9 +4,9 @@ name: Update Hugo (staging)
 on:
   schedule:
     - cron: "0 * * * *"
-  push:
-    branches: 
-      - hugo
+  # push:
+  #   branches: 
+  #     - hugo
 
 jobs:
   build:
