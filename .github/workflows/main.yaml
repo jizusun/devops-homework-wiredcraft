@@ -27,8 +27,8 @@ jobs:
         run: |
           cd src
           make build
-          mv build/main build/hugoctl
-          export PATH=$PATH:$PWD/build
+          mv build/main /usr/local/bin/hugoctl
+          echo $PATH
       - name: Update Hugo
         run: |
           hugoctl dev
