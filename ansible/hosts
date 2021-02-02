@@ -4,11 +4,13 @@ dev.wiredcraft.edtechstar.com
 [staging]
 staging.wiredcraft.edtechstar.com
 
-[dev:vars]
-app_root_dir=dev
+[all:vars]
 ansible_ssh_user=vagrant
 ansible_ssh_common_args='-F ssh.cfg'
 ssh_args="-F ssh.cfg"
+
+[dev:vars]
+app_root_dir=dev
 
 [staging:vars]
 app_root_dir=staging
