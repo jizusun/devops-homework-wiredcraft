@@ -112,7 +112,7 @@ func execCommandInDir(workingDir string, name string, arg ...string) (string, er
 // AddCommitAndPush git add -A, git commit, git push
 func (dep Dependencies) AddCommitAndPush(message string, workingDir string) (string, error) {
 	fmt.Println("Working dir: " + workingDir)
-	output, err := execCommandInDir(workingDir, "git", "add", "-A")
+	output, err := execCommandInDir(workingDir, "git", "add", "content/posts/*.md")
 	if err != nil {
 		return "", err
 	}
